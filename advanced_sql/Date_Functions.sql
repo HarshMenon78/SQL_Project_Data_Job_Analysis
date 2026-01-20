@@ -9,13 +9,14 @@ SELECT
 
 /* now we try this on our actual database table of job_postings_fact table , using our 
 specific column of 'job_posted_date' since it is a TIMESTAMP type value (date related) :-  */
-SET TIME ZONE 'Asia/Kolkata'; -- setting the timezone to UTC , i.e the now resulting time will be resulted in an UTC set clock's format
+SET TIME ZONE 'Asia/Kolkata'; -- setting the timezone to Asia/Kolkata , i.e the now resulting time will be resulted in an Asia/Kolkata set clock's format , unless we mention otherwise as we have done below by specifying UTC for the second time after settig timezone of our original timestamp to UTC , which will basically give us the time in UTC set clock format
 SELECT
     job_id,
     job_title_short AS title,
-    job_location AS location,   
+    job_location AS location,
+    job_posted_date,
     job_posted_date :: DATE as date,
-    job_posted_date AT TIME ZONE 'UTC' AT TIME ZONE 'UTC' AS date_time
+    job_posted_date AT TIME ZONE 'UTC' AT TIME ZONE 'America/New_York'
 FROM
     job_postings_fact
 LIMIT 5;

@@ -16,7 +16,8 @@ FROM
 LEFT JOIN 
     company_dim AS c ON jpf.company_id = c.company_id
 WHERE
-    job_location = 'Anywhere'-- job_location set to 'Anywhere' specifies remote-job/wfh
+    job_title_short = 'Data Analyst'
+    AND job_location = 'Anywhere'-- job_location set to 'Anywhere' specifies remote-job/wfh
     AND salary_year_avg IS NOT NULL
 ORDER BY
     salary_year_avg DESC
