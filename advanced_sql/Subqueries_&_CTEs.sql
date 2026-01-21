@@ -74,6 +74,8 @@ JOIN
     skills_dim AS s ON jc.skill_id = s.skill_id -- inner joins the skills_dim with the subquery of jc(which contains job count of each skill)
 WHERE 
     jc.rnk <= 5;
+ORDER BY
+    jc.job_count DESC;
 
 --CTE(the same query using CTE instead of subqueries)
 WITH job_count_skill AS ( -- creating a cte where each skill_id in skills_job_dim is displayed along its corresponding job count in job_postings_fact , (where each job_id in jpf will be counted for the count of jobs, for each of the skill_id mentioned im sj table , which has a correspinding job_id and the no. of times these job_id appear which has a corresponding skill_id to them , their count will increment in the job_count corresponding to the skill_id)
@@ -93,11 +95,13 @@ SELECT
     s.skills,
     jcs.job_count
 FROM
-    skills_dim AS s
+    job_count_skill as jcs
 JOIN
-    job_count_skill as jcs ON jcs.skill_id = s.skill_id
+    skills_dim AS s ON jcs.skill_id = s.skill_id
 WHERE
     jcs.rnk <= 5;
+ORDER BY
+    jcs.job_count DESC;
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 /* Practice Problem 7:-
