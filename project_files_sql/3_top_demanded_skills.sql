@@ -6,6 +6,27 @@ Question : Find the most in demand skills by their job count from job postings :
 - Why? Retrieves the most sought-after skills for Data Analyst positions,
   helping job seekers and employers understand key tech stack in demand.
 */
+--Normal way:-
+SELECT
+    sj.skill_id,
+    s.skills,
+    COUNT(*) AS job_count
+FROM
+    job_Postings_fact AS jpf
+JOIN
+    skills_job_dim AS sj ON jpf.job_id = sj.job_id
+JOIN
+    skills_dim AS s ON sj.skill_id = s.skill_id
+WHERE
+    salary_year_avg IS NOT NULL
+GROUP BY
+    sj.skill_id,
+    s.skills
+ORDER BY
+    job_count DESC
+LIMIT 10;
+
+--cte way:-
 WITH skills_job_count AS( -- CTE to calculate job counts per skill for Data Analyst work from home jobs.
     SELECT
         sj.skill_id,

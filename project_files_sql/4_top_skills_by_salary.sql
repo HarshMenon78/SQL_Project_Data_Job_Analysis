@@ -6,6 +6,28 @@ Question : What are the top 10 skills based on their job's salary:
   providing insights into valuable competencies in the job market.
 */
 
+--Normal method:-
+SELECT
+    sj.skill_id,
+    s.skills,
+    AVG(salary_year_avg) AS avg_salary 
+FROM
+    job_postings_fact AS jpf
+JOIN
+    skills_job_dim AS sj ON jpf.job_id = sj.job_id
+JOIN
+    skills_dim AS s ON sj.skill_id = s.skill_id
+WHERE
+    salary_year_avg IS NOT NULL
+GROUP BY
+    sj.skill_id,
+    s.skills
+ORDER BY
+    avg_salary DESC
+LIMIT 10; -- the rnk method is avoided here since the logical order of SQL evaluates FROM and WHERE before SELECT , and rnk not being a column in the jpf table , cant be used in WHERE clause directly here.
+
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+
 --Subquery based method:-
 SELECT
     sjs.skill_id,
