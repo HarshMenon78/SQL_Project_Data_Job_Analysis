@@ -1,5 +1,5 @@
 /*
-Question : What are the most optimal skills to learn on the basis of both job demand as well as average salary:
+Problem : What are the most optimal skills to learn on the basis of both job demand as well as average salary:
 - The jobs should be of Data Analyst roles with a specific salary which is not null.
 - Find the top 10 skills by job count as well as average salary for Data Analyst jobs.
 - Use 2 CTEs for this purpose, one for job count per skill and another for average salary per skill.
@@ -52,7 +52,14 @@ FROM
     skills_demand AS sd
 JOIN
     skills_salary AS ss ON sd.skill_id = ss.skill_id
-ORDER BY -- ordering by both job count and average salary in descending order to get top 10 optimal skills, firstly according to job_count , and secondly for avg salaries (i.e if job counts are same , then avg_salary will decide the order).
+ORDER BY -- ordering by both job count and average salary in descending order to get top optimal skills, firstly according to job_count , and secondly for avg salaries (i.e if job counts are same , then avg_salary will decide the order).
     sd.job_count DESC,
     ss.avg_salary DESC
-LIMIT 10;
+LIMIT 10; -- limiting to top 10 optimal skills.
+
+/* result explained:
+- SQL and Excel dominate demand, confirming they are baseline requirements for most Data Analyst roles.
+- Python and R offer higher salary upside despite lower job counts, indicating a premium for advanced analytical skills.
+- Tableau balances demand and pay, highlighting the importance of data visualization for business impact.
+- Excel has high demand but lower average salaries, suggesting it qualifies candidates but does not strongly differentiate them.
+- The most optimal skill set combines SQL, Excel, a programming language (Python/R), and a visualization tool (Tableau).

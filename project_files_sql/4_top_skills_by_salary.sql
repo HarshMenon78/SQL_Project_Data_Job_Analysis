@@ -1,5 +1,5 @@
 /*
-Question : What are the top 10 skills based on their job's salary:
+Problem : What are the top 10 skills based on their job's salary:
 - For this purpose look at the average salaries asociated with each skill's corresponding jobs.
 - Focus on jobs with specified salaries (i.e., non-null salary values).
 - Why? Because it reveals which skills are linked to higher-paying roles,
