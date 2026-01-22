@@ -1,7 +1,7 @@
 /*
-Question: What are the top paying data analyst jobs posted:
+Problem: What are the top paying data analyst jobs posted:
 - Identify the top 10 highest paying data analyst job postings , which are available remotely.
-- Focusus on jobs with specific salaries , which are not NULL.
+- Focuses on jobs with specific salaries , which are not NULL.
 - Also mention the company name and location for each job posting.
 */
 SELECT
