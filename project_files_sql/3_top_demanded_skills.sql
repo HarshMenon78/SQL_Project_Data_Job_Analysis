@@ -18,13 +18,14 @@ JOIN
 JOIN
     skills_dim AS s ON sj.skill_id = s.skill_id
 WHERE
-    salary_year_avg IS NOT NULL
+    jpf.job_title_short IN ('Data Analyst')
+    AND salary_year_avg IS NOT NULL
 GROUP BY
     sj.skill_id,
     s.skills
 ORDER BY
     job_count DESC
-LIMIT 10;
+LIMIT 10; -- we use limit 10 to get top 10 , rather than using rank function her, because 'rnk' allias can't be used in WHERE clause since its not a column , nor can we mention the the window fn of RANK() in WHERE clause.
 
 --cte way:-
 WITH skills_job_count AS( -- CTE to calculate job counts per skill for Data Analyst work from home jobs.
@@ -53,6 +54,32 @@ WHERE -- filters out the previously set ranks by desc order of job count for eac
     sjc.rnk <= 10
 ORDER BY -- the randomly ordered top 10 skills returned from WHERE clause will be ordered in descending order by job count in the final result.
     job_count DESC;
+
+-- subquery way:-
+SELECT
+    sjc.skill_id,
+    s.skills,
+    sjc.job_count
+FROM (
+    SELECT
+        sj.skill_id,
+        COUNT(*) AS job_count,
+        RANK() OVER(ORDER BY COUNT(*) DESC) AS rnk -- ranking the result on the basis of their job count in descending order.
+    FROM
+        job_postings_fact AS jpf
+    JOIN
+        skills_job_dim AS sj ON jpf.job_id = sj.job_id
+    WHERE
+        job_title_short IN ('Data Analyst')
+    GROUP BY
+        sj.skill_id
+) AS sjc -- skills_job_count
+JOIN
+    skills_dim AS s ON sjc.skill_id = s.skill_id
+WHERE -- filtering out the top 10 ranks from the subquery result to get top 10 skills by job count (in random order).
+    sjc.rnk <= 10
+ORDER BY -- final ordering of the randomly ordered top 10 skills by their job count in descending order.
+    sjc.job_count DESC;
 
 /* solution explanation:
 - SQL is the most in-demand skill, confirming its central role in data extraction and database querying.

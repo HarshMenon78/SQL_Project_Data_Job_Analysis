@@ -10,6 +10,7 @@ SELECT
     jpf.company_id,
     c.name AS company_name,
     job_location,
+    job_posted_date,
     salary_year_avg
 FROM
     job_postings_fact AS jpf
