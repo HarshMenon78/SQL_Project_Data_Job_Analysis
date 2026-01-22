@@ -1,5 +1,5 @@
 /*
-Problem : Find the most in demand skills by their job count from job postings :-
+Problem 3 : Find the most in demand skills by their job count from job postings :-
 - the jobs should be of Data Analyst roles.
 - focus on all jobs postings for this role.
 - Find the top 10 skills by job count for Data Analyst work from home jobs.

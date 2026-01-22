@@ -1,5 +1,5 @@
 /*
-Problem : What are the latest job postings available in the dataset:
+Problem 6 : What are the latest job postings available in the dataset:
 - Focus on retrieving the top 10 most recent 'Data Analyst' job postings based on the posting date-time.
 - Focus on job_postings after feb 2023.
 - Also in the same query mention the date-time of job postings according to America/New_York timezone,

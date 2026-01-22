@@ -1,5 +1,5 @@
 /*
-Problem : What are the most optimal skills to learn on the basis of both job demand as well as average salary:
+Problem 5 : What are the most optimal skills to learn on the basis of both job demand as well as average salary:
 - The jobs should be of Data Analyst roles with a specific salary which is not null.
 - Find the top 10 skills by job count as well as average salary for Data Analyst jobs.
 - Use 2 CTEs for this purpose, one for job count per skill and another for average salary per skill.

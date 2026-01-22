@@ -1,5 +1,5 @@
 /*
-Problem : What are the top 10 skills based on their job's salary:
+Problem 4 : What are the top 10 skills based on their job's salary:
 - For this purpose look at the average salaries asociated with each skill's corresponding jobs.
 - Focus on jobs with specified salaries (i.e., non-null salary values).
 - Why? Because it reveals which skills are linked to higher-paying roles,
@@ -37,7 +37,7 @@ FROM ( -- subquery to calculate average salary per skill , where salary is not n
     SELECT
         sj.skill_id,
         AVG(salary_year_avg) AS avg_salary,
-        RANK() OVER(ORDER BY AVG(salary_year_avg) DESC) AS rnk
+        RANK() OVER(ORDER BY AVG(salary_year_avg) DESC) AS rnk -- window function RANK() can only be used in subqueries or CTEs, since the rnk is in subquery in FROM clause , hence executes before the SELECT clause of main query, when mentioned in WHERE clause of main query.
     FROM
         job_postings_fact AS jpf
     JOIN
@@ -61,9 +61,7 @@ WITH skills_job_sal AS ( -- CTE to calculate average salary per skill , where sa
     SELECT
         sj.skill_id,
         AVG(salary_year_avg) AS avg_salary,
-        RANK() OVER(ORDER BY AVG(salary_year_avg) DESC) AS rnk
-    FROM
-        job_postings_fact AS jpf
+        RANK() OVER(ORDER BY AVG(salary_year_avg) DESC) AS rnk -- window function RANK() can only be used in subqueries or CTEs, since the rnk is in CTE which was mentioned in FROM clause , hence executes before the SELECT clause of main query, when mentioned in WHERE clause of main query.
     JOIN
         skills_job_dim AS sj ON jpf.job_id = sj.job_id
     WHERE
