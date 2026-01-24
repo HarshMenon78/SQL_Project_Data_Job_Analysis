@@ -1,2 +1,11 @@
 /.vscode
 /csv_files
+
+# Generated results & visualizations
+results_csv/
+images/
+generate_visualizations.py
+
+# OS / editor noise
+.DS_Store
+.vscode/
