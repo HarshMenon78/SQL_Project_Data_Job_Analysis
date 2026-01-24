@@ -58,7 +58,7 @@ The objective is to evaluate whether high compensation is limited to on-site rol
 The results show that several remote Data Analyst roles offer salaries exceeding **$150K–$200K annually**.  
 This confirms that location independence does not restrict earning potential and that high-paying opportunities exist across a range of companies.
 
-![Top Paying Remote Data Analyst Jobs](PASTE_IMAGE_URL_HERE)
+![Top Paying Remote Data Analyst Jobs](<img width="640" height="480" alt="Image" src="https://github.com/user-attachments/assets/f7cd886a-c020-4761-b012-010f30284d80" />)
 
 ---
 
