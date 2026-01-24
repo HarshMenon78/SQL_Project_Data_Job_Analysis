@@ -58,7 +58,7 @@ The objective is to evaluate whether high compensation is limited to on-site rol
 The results show that several remote Data Analyst roles offer salaries exceeding **$150K–$200K annually**.  
 This confirms that location independence does not restrict earning potential and that high-paying opportunities exist across a range of companies.
 
-![Top Paying Remote Data Analyst Jobs](<img width="640" height="480" alt="Image" src="https://github.com/user-attachments/assets/f7cd886a-c020-4761-b012-010f30284d80" />)
+![Top Paying Remote Data Analyst Jobs](https://github.com/user-attachments/assets/f7cd886a-c020-4761-b012-010f30284d80)
 
 ---
 
@@ -72,7 +72,7 @@ This analysis determines which skills are most commonly required in the **highes
 SQL appears in nearly all top-paying jobs, reinforcing its role as a foundational skill.  
 Python and Tableau are also highly prevalent, highlighting the importance of programming and data visualization in high-compensation roles.
 
-![Skills Required for Top Paying Jobs](PASTE_IMAGE_URL_HERE)
+![Skills Required for Top Paying Jobs](https://github.com/user-attachments/assets/b84999b4-ba99-4a1f-b82a-7941adb2ba64)
 
 ---
 
@@ -86,7 +86,7 @@ This query ranks skills by the number of Data Analyst job postings that require 
 SQL and Excel dominate demand, confirming they are baseline requirements for most roles.  
 Python, Tableau, and Power BI follow closely, emphasizing the importance of analytical and visualization skills.
 
-![Most In-Demand Data Analyst Skills](PASTE_IMAGE_URL_HERE)
+![Most In-Demand Data Analyst Skills](https://github.com/user-attachments/assets/138c4cfc-93c1-43db-87f1-2ee25d7f5466)
 
 ---
 
@@ -100,7 +100,7 @@ This analysis identifies skills associated with the **highest average salaries**
 Highly specialized and infrastructure-related skills command premium pay.  
 These skills are less common but significantly increase earning potential, often reflecting scarcity and advanced expertise.
 
-![Top Paying Data Analyst Skills](PASTE_IMAGE_URL_HERE)
+![Top Paying Data Analyst Skills](https://github.com/user-attachments/assets/c8b89f78-bbf5-4ba6-aa2e-0746b1fa3ba8)
 
 ---
 
@@ -114,7 +114,7 @@ This query combines job demand and average salary to identify the **most optimal
 SQL offers the strongest balance between demand and compensation.  
 Python and Tableau provide strong salary upside, while Excel—though highly demanded—offers less differentiation in pay.
 
-![Most Optimal Data Analyst Skills](PASTE_IMAGE_URL_HERE)
+![Most Optimal Data Analyst Skills](https://github.com/user-attachments/assets/62dd72f0-4b13-43e5-ab48-e17c0884ae98)
 
 ---
 
@@ -128,7 +128,7 @@ This query retrieves the most recent Data Analyst job postings after February 20
 The latest postings show continued hiring activity across regions and remote roles.  
 Salary ranges vary widely, reflecting differences in role scope, seniority, and company expectations.
 
-![Latest Data Analyst Job Postings](PASTE_IMAGE_URL_HERE)
+![Latest Data Analyst Job Postings](https://github.com/user-attachments/assets/4b864220-f787-4ca4-bb45-9480171410d9)
 
 ---
 
