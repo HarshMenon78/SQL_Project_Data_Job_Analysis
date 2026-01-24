@@ -50,7 +50,7 @@ SELECT
     ss.avg_salary
 FROM
     skills_demand AS sd
-JOIN
+JOIN -- inner joining the CTE of skills_demand and skills_salary on skill_id to get both job counts and average salaries for each skill.
     skills_salary AS ss ON sd.skill_id = ss.skill_id
 ORDER BY -- ordering by both job count and average salary in descending order to get top optimal skills, firstly according to job_count , and secondly for avg salaries (i.e if job counts are same , then avg_salary will decide the order).
     sd.job_count DESC,
