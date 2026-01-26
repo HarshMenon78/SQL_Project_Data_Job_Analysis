@@ -112,9 +112,9 @@ This project addresses these questions by analyzing job postings, salary informa
 **📌 Significance:**
 - **`.vscode/`**: VS Code + SQLTools configuration (gitignored)
 - **`advanced_sql/`**: SQL learning & experimentation (7 fundamental files)  
-- **`csv_files/`**: 129MB raw csv files of datasets , to be loaded into empty tables created in `sql_load/`'s `2_create_tables.sql` , using `3_modify_tables.sql` (gitignored - main 123MB job_postings_fact.csv)
+- **`csv_files/`**: 129MB raw csv files of jobs_dataset , to be loaded into empty tables created in `sql_load/`'s `2_create_tables.sql` , using `3_modify_tables.sql` (gitignored - main 123MB job_postings_fact.csv)
 - **`images/`**: Generated PNG visualizations from analysis (gitignored)
-- **`project_files_sql/`**: **All 6 core business analyses** (main deliverables)
+- **`project_files_sql/`**: **All 6 core queries which was used to perform the data analysis on our jobs_dataset, on the basis of the problem statements mentioned for each query** (main deliverables)
 - **`results_csv/`**: Raw SQL query outputs (gitignored)
 - **`sql_load/`**: Production-ready ETL pipeline (database setup + data loading)
 - **`.gitignore`**: Smartly excludes 129MB+ data (1.5MB GitHub repo)
@@ -123,6 +123,7 @@ This project addresses these questions by analyzing job postings, salary informa
 ---
 
 ## The Analysis
+**📂 Working in `project_files_sql/` folder - contains All 6 core SQL queries which is used to perform the data analysis on our jobs_dataset, on the basis of the problem statements mentioned for each query (in the --comments) :**
 
 ---
 
