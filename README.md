@@ -42,6 +42,85 @@ This project addresses these questions by analyzing job postings, salary informa
 > 📌 Large datasets, generated results, and visualizations are excluded from the repository for cleanliness and efficiency.
 
 ---
+## 📁 Project Structure & File Organization
+
+**📂 Sql_Project_Data_job_Analysis**
+
+└── 📁.vscode
+
+    └── 🛠️settings.json
+    
+└── 📁advanced_sql
+
+    ├── ⛁ Case_Expressions.sql
+    ├── ⛁ Database_Creation(sql_course).sql
+    ├── ⛁ Date_Functions.sql
+    ├── ⛁ Monthwise_job_tables.sql
+    ├── ⛁ Sample TABLE jobs_applied.sql
+    ├── ⛁ Subqueries_&_CTEs.sql
+    └── ⛁ Union_Operators.sql
+    
+└── 📁csv_files
+
+    ├── 👻.DS_Store
+    ├── 🧾company_dim.csv
+    ├── 🧾job_postings_fact.csv
+    ├── 🧾skills_dim.csv
+    └── 🧾skills_job_dim.csv
+    
+└── 📁images
+
+    ├── 🖼️ 1_top_paying_jobs.png
+    ├── 🖼️ 2_top_paying_jobs_skills.png
+    ├── 🖼️ 3_top_demanded_skills.png
+    ├── 🖼️ 4_top_skills_by_salary.png
+    ├── 🖼️ 5_top_optimal_skills.png
+    └── 🖼️ 6_latest_jobs.png
+    
+└── 📁project_files_sql
+
+    ├── ⛁ 1_top_paying_jobs.sql
+    ├── ⛁ 2_top_paying_job's_skills.sql
+    ├── ⛁ 3_top_demanded_skills.sql
+    ├── ⛁ 4_top_skills_by_salary.sql
+    ├── ⛁ 5_top_optimal_skills.sql
+    └── ⛁ 6_latest_jobs.sql
+    
+└── 📁results_csv
+
+    ├── 🧾latest_jobs.csv
+    ├── 🧾top_optimal_skills.csv
+    ├── 🧾top_pay_jobs_skills.csv
+    ├── 🧾top_paying_jobs.csv
+    ├── 🧾top_salary_skills.csv
+    └── 🧾top_skills_DA.csv
+    
+└── 📁sql_load
+
+    ├── ⛁ 1_create_database.sql
+    ├── ⛁ 2_create_tables.sql
+    └── ⛁ 3_modify_tables.sql
+    
+└── 🚫.gitignore
+
+└── 🐍generate_vizualizations.py
+
+└── 📝README.md
+
+---
+
+**📌 Significance:**
+- **`.vscode/`**: VS Code + SQLTools configuration (gitignored)
+- **`advanced_sql/`**: SQL learning & experimentation (7 fundamental files)  
+- **`csv_files/`**: 129MB raw csv files of datasets , to be loaded into empty tables created in `sql_load/`'s `2_create_tables.sql` , using `3_modify_tables.sql` (gitignored - main 123MB job_postings_fact.csv)
+- **`images/`**: Generated PNG visualizations from analysis (gitignored)
+- **`project_files_sql/`**: **All 6 core business analyses** (main deliverables)
+- **`results_csv/`**: Raw SQL query outputs (gitignored)
+- **`sql_load/`**: Production-ready ETL pipeline (database setup + data loading)
+- **`.gitignore`**: Smartly excludes 129MB+ data (1.5MB GitHub repo)
+- **`generate_visualizations.py`**: Python script creating charts (gitignored)
+
+---
 
 ## The Analysis
 
