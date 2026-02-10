@@ -25,7 +25,7 @@ WITH top_pay_jobs AS (
     )
 SELECT 
     tpj.*, -- selecting all columns from the CTE top_pay_jobs
-    s.skill_id,
+    sj.skill_id,
     s.skills -- selecting skill names from skills_dim table
 FROM
     top_pay_jobs AS tpj 
