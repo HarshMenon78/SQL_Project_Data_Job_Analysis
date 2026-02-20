@@ -58,11 +58,11 @@ SELECT
     s.skill_id,
     s.skills,
     jc.job_count
-FROM ( -- Subquery jc , specifying the job postings count of each skill_id , inner joining job_postings_fact & skills_job_dim
+FROM ( -- Subquery jc , specifying the job postings count of each skill_id , inner joining job_postings_fact & skills_job_dim , i.e for each job_id in jpf which has skill_id corresponding in sj , the entire row from jpf(having that particular job_id) will be counted as a job_count for that skill_id from sj.
     SELECT
         sj.skill_id,
         COUNT(*) AS job_count,
-        RANK() OVER(ORDER BY COUNT(*) DESC) AS rnk -- creating an entity of ranks by ORDER BY COUNT(*) to get top 5 in later part of query
+        RANK() OVER(ORDER BY COUNT(*) DESC) AS rnk -- creating an entity(using window function RANK()) of ranks by ORDER BY COUNT(*) to get top 5 in later part of query
     FROM
         job_postings_fact AS jpf
     JOIN 
