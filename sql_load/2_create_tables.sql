@@ -44,7 +44,7 @@ CREATE TABLE public.skills_job_dim
     job_id INT,
     skill_id INT,
     PRIMARY KEY (job_id, skill_id),  /*Telling that the combination of one particular job_id to one 
-                                       particular company_id (i.e a row) will only occur once hence being a primary key*/
+                                       particular skill_id (i.e a row) will only occur once hence being a primary key*/
     FOREIGN KEY (job_id) REFERENCES public.job_postings_fact (job_id),
     FOREIGN KEY (skill_id) REFERENCES public.skills_dim (skill_id)
 );

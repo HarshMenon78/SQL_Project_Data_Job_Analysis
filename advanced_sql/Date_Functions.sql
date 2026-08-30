@@ -16,7 +16,8 @@ SELECT
     job_location AS location,
     job_posted_date,
     job_posted_date :: DATE as date,
-    job_posted_date AT TIME ZONE 'UTC' AT TIME ZONE 'America/New_York'
+    job_posted_date AT TIME ZONE 'UTC' AS job_posted_date_utc, -- this will assign the timestamp value of job_posted_date to UTC set clock format timezone, the result will however be altered showing the time in Asia/kolkata time which is 05:30 hours ahead of UTC time, hence showing the time which is 5 hours and 30 minutes ahead of the original timestamp value of job_posted_date, along with mentioning +05:30 in the result signifying the resulted time is 5 hours 30 mins ahead of UTC timezone.
+    job_posted_date AT TIME ZONE 'UTC' AT TIME ZONE 'America/New_York' AS job_posted_date_nyc -- this will assign the value of job_posted_date to UTC format, signifying the original time mentioned is of UTC time format which is +00:00 hours ahead of UTC time, but when we mention the second 'AT TIMEZONE 'America/New_York'' it will make sure that the origial timestamp which has been alotted the UTC time zone, the same exact time be returned for its new york time , which is usually -04:00 hours behind UTC time , hence it will return the nyc time equivalent for the same time mentioned for UTC by subtracting 4 hours from it , this time without giving the timezone referrence of -04:00 since the utc assigned time has been hard coded to be shown in nyc's format which is 4 hours behind irrespective of their databases set timezone(i.e kolkata timezone).
 FROM
     job_postings_fact
 LIMIT 5;
